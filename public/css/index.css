@@ -1,0 +1,83 @@
+#animada {
+  animation-name: gifprincipal;
+  animation-duration: 3s;
+  animation-timing-function: linear;
+  animation-delay: 0s;
+  animation-fill-mode: forwards;
+  animation-direction: normal;
+  animation-play-state: running;
+}
+
+@keyframes gifprincipal {
+  from {
+    background: url(../image/Informationtab.gif);
+    background-repeat: no-repeat;
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+    background: url(../image/Informationtab.gif);
+    background-repeat: no-repeat;
+  }
+}
+
+h1 {
+  text-align: center;
+  padding-top: 40%;
+}
+
+#formulario {
+  height: 40%;
+  width: 40%;
+  padding-left: 50%;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.inputs > input {
+  font-size: 16px;
+  padding: 4px;
+  border: 1px red solid;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  background-color: black;
+  color: aliceblue;
+}
+
+.inputs > input:focus {
+  background-color: black;
+  outline: none;
+}
+
+.inputs > input::placeholder {
+  padding-left: 10px;
+}
+
+#btn-login {
+  font-size: 20px;
+  background-color: rgba(128, 255, 0, 0.75);
+  color: white;
+  padding: 14px;
+  border: none;
+  border-radius: 4px;
+  width: 40%;
+  margin-bottom: 8px;
+  cursor: pointer;
+  padding-right: 60px;
+}
+
+#criar-conta {
+  color: black;
+  font-size: 14px;
+  background-color: rgba(255, 0, 0, 0.75);
+  color: white;
+  padding: 14px;
+  border: none;
+  border-radius: 4px;
+  width: 40%;
+  margin-bottom: 8px;
+  cursor: pointer;
+}

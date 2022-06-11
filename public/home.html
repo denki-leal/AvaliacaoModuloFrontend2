@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/home.css" />
+    <title>Recados</title>
+  </head>
+  <body id="main-recados">
+    <div class="container vh-100">
+      <div class="row h-25">
+        <div class="col-12 bg-secondary">
+          <header>
+            <h1>Recados</h1>
+
+            <div>
+              <button id="logout" onclick="logout()">Logout</button>
+            </div>
+          </header>
+          <main>
+            <form id="form-message">
+              <input
+                id="input-descricao"
+                type="text"
+                name="message"
+                placeholder="Descrição"
+              />
+              <input
+                id="input-detalhes"
+                type="text"
+                name="details"
+                placeholder="Detalhamento"
+              />
+              <button
+                type="submit"
+                id="btn-salvar"
+                value="Salvar"
+                onclick="salvarRecado()"
+              >
+                Salvar
+              </button>
+            </form>
+
+            <table id="tabela">
+              <thead class="table-head">
+                <th class="table-id">#</th>
+                <th class="table-description">Descrição</th>
+                <th class="table-details">Detalhamento</th>
+                <th class="table-buttons">Ação</th>
+              </thead>
+              <tbody id="table-body"></tbody>
+            </table>
+          </main>
+        </div>
+      </div>
+    </div>
+    <script src="./js/bootstrap.min.js"></script>
+  </body>
+</html>
