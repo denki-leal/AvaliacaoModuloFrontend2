@@ -19,10 +19,10 @@
                 <div class="inputs">
                 <input id="input-username" type="text" placeholder="Usuário" name="username"/>
                 <input id="input-password" type="password" placeholder="Senha" name="password"/>
-                <button type="button" id="btn-login" onclick="">Login!</button>
-                <button type="button" id="criar-conta" class="btn" data-bs-toggle="modal" data-bs-target="#register-modal">Criar Conta!</button>
                 </div>
                 </form>
+                <button type="button" id="btn-login" onclick="login()">Login!</button>
+                <button type="button" id="criar-conta" class="btn" data-bs-toggle="modal" data-bs-target="#register-modal">Criar Conta!</button>
             </div>
 
 
@@ -52,7 +52,7 @@
                     
                     <div class="modal-footer">
                         <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Cancelar</button>
-                        <button type="submit" class="btn btn-outline-success">Criar conta</button>
+                        <button type="button" class="btn btn-outline-success" onclick="cadastrarUser()" id="btn-criar-conta-modal">Criar conta</button>
                     </div>
                     </form>
                
@@ -61,6 +61,7 @@
         </div>>
 
         <script src="../js/bootstrap.min.js"></script>
+        <script src="../dist/index.js"></script>
     
 </body>
 </html>
