@@ -93,3 +93,6 @@ function logout() {
 }
 
 checkLoggedHome();
+mostrarMensagem();
+
+// verificar se a função l96 esta funcionando
