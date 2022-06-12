@@ -2,9 +2,9 @@
 const inputName = document.getElementById("user-create-input");
 const inputPass = document.getElementById("password-create-input");
 const buttonCadastro = document.getElementById("btn-criar-conta-modal");
-const session = localStorage.getItem("session");
-let logged = sessionStorage.getItem("logged");
-checkLogged();
+const sessionIndex = localStorage.getItem("session");
+let loggedIndex = sessionStorage.getItem("logged");
+checkLoggedIndex();
 function cadastrarUser() {
     if (!verificarNome(inputName.value)) {
         return alert("Seu nome precisa ter pelo menos 3 letras!");
@@ -14,7 +14,7 @@ function cadastrarUser() {
         password: inputPass.value,
         recados: []
     };
-    const user = JSON.parse(window.localStorage.getItem('users')) || [];
+    const user = JSON.parse(localStorage.getItem('users')) || [];
     if (user.findIndex((user) => user.name === newUser.name) !== -1) {
         return alert(`O usuário ${newUser} não está disponivel!`);
     }
@@ -32,15 +32,30 @@ function verificarNome(name) {
 function saveSession(data) {
     sessionStorage.setItem('logged', data);
 }
-function checkLogged() {
-    if (session) {
-        sessionStorage.setItem("logged", session);
-        logged = session;
+function checkLoggedIndex() {
+    if (sessionIndex) {
+        sessionStorage.setItem("logged", sessionIndex);
+        loggedIndex = sessionIndex;
     }
-    if (logged) {
-        saveSession(logged);
+    if (loggedIndex) {
+        saveSession(loggedIndex);
         window.location.href = './home.html';
     }
 }
+const qSelect = (select) => document.querySelector(select);
 function login() {
+    const form = qSelect("#formulario");
+    const user = JSON.parse(localStorage.getItem("users")) || "";
+    const indiceUsuario = user.findIndex((us) => us.name === form.username.value);
+    if (indiceUsuario === -1) {
+        alert("Login ou senha invalidos");
+        return;
+    }
+    const indicePass = user.findIndex((us) => us.password === form.password.value);
+    if (indicePass === -1) {
+        alert("Login ou senha invalidos");
+        return;
+    }
+    saveSession(form.username.value);
+    window.location.href = "./home.html";
 }
