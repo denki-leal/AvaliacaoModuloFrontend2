@@ -33,8 +33,9 @@ function cadastrarUser() {
 
     localStorage.setItem('users', JSON.stringify(user))
     alert(`Tudo ok ${inputName.value}! Sua conta foi criada!`)
-    return
+    
     limparForms()
+    return
 }
 
 function verificarNome(name:string){

@@ -16,29 +16,31 @@
             <div>
               <button id="logout" onclick="logout()">Logout</button>
             </div>
+
           </header>
+          
           <main>
+            
             <form id="form-message">
+              
               <input
                 id="input-descricao"
                 type="text"
                 name="message"
                 placeholder="Descrição"
+                required
               />
+
               <input
                 id="input-detalhes"
                 type="text"
                 name="details"
                 placeholder="Detalhamento"
+                required
               />
-              <button
-                type="submit"
-                id="btn-salvar"
-                value="Salvar"
-                onclick="salvarRecado()"
-              >
-                Salvar
-              </button>
+
+              <input type="submit" id="btn-salvar" value="Salvar"></input>
+
             </form>
 
             <table id="tabela">
@@ -48,7 +50,10 @@
                 <th class="table-details">Detalhamento</th>
                 <th class="table-buttons">Ação</th>
               </thead>
-              <tbody id="table-body"></tbody>
+              <tbody id="table-body">
+          </td>
+        </tr>
+              </tbody>
             </table>
           </main>
         </div>

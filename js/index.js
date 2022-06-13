@@ -21,8 +21,8 @@ function cadastrarUser() {
     user.push(newUser);
     localStorage.setItem('users', JSON.stringify(user));
     alert(`Tudo ok ${inputName.value}! Sua conta foi criada!`);
-    return;
     limparForms();
+    return;
 }
 function verificarNome(name) {
     if (name.length >= 3) {
