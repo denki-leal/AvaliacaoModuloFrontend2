@@ -37,6 +37,8 @@ main {
 .header-bar {
   padding-top: 32px;
 }
+
+
 #form-message {
   display: flex;
   flex-direction: row;
@@ -57,7 +59,8 @@ main {
   margin-right: 24px;
 }
 
-#form-message > button {
+#form-message :last-child {
+  width: 15%;
   font-size: 18px;
   margin-left: -4px;
   padding: 8px;
