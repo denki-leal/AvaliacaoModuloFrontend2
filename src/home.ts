@@ -113,3 +113,8 @@ function logout() {
 checkLoggedHome();
 
 document.addEventListener('DOMContentLoaded', preencherTabela)
+
+
+
+
+
