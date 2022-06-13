@@ -10,16 +10,16 @@ function cadastrarUser() {
         return alert("Seu nome precisa ter pelo menos 3 letras!");
     }
     const newUser = {
-        name: inputName.value,
+        username: inputName.value,
         password: inputPass.value,
         recados: []
     };
-    const user = JSON.parse(localStorage.getItem('users')) || [];
-    if (user.findIndex((user) => user.name === newUser.name) !== -1) {
+    const user = JSON.parse(localStorage.getItem('user')) || [];
+    if (user.findIndex((user) => user.username === newUser.username) !== -1) {
         return alert(`O usuário ${newUser} não está disponivel!`);
     }
     user.push(newUser);
-    localStorage.setItem('users', JSON.stringify(user));
+    localStorage.setItem('user', JSON.stringify(user));
     alert(`Tudo ok ${inputName.value}! Sua conta foi criada!`);
     limparForms();
     return;
@@ -46,8 +46,8 @@ function checkLoggedIndex() {
 const qSelect = (select) => document.querySelector(select);
 function login() {
     const form = qSelect("#formulario");
-    const user = JSON.parse(localStorage.getItem("users")) || "";
-    const indiceUsuario = user.findIndex((us) => us.name === form.username.value);
+    const user = JSON.parse(localStorage.getItem('user')) || [];
+    const indiceUsuario = user.findIndex((us) => us.username === form.username.value);
     if (indiceUsuario === -1) {
         alert("Login ou senha invalidos");
         return;

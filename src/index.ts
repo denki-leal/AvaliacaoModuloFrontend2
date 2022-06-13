@@ -5,7 +5,7 @@ const sessionIndex = localStorage.getItem("session");
 let loggedIndex = sessionStorage.getItem("logged");
 
 interface IuserCadastro {
-    name:string
+    username:string
     password:string
     recados:string[]
 }
@@ -19,22 +19,22 @@ function cadastrarUser() {
     }
 
     const newUser:IuserCadastro = {
-        name: inputName.value,
+        username: inputName.value,
         password: inputPass.value, 
         recados: []
     }
 
-    const user:IuserCadastro[] = JSON.parse(localStorage.getItem('users') as string) ||[]
-    if(user.findIndex((user) => user.name === newUser.name) !== -1){
+    const user:IuserCadastro[] = JSON.parse(localStorage.getItem('user') as string) ||[]
+    if(user.findIndex((user) => user.username === newUser.username) !== -1){
         return alert(`O usuário ${newUser} não está disponivel!`)
     }
 
     user.push(newUser)
 
-    localStorage.setItem('users', JSON.stringify(user))
+    localStorage.setItem('user', JSON.stringify(user))
     alert(`Tudo ok ${inputName.value}! Sua conta foi criada!`)
     
-    limparForms()
+    limparForms();
     return
 }
 
@@ -66,8 +66,8 @@ const qSelect = (select:any) => document.querySelector(select);
 function login(){
     const form = qSelect("#formulario");
 
-  const user = JSON.parse(localStorage.getItem("users") as string) || ""
-  const indiceUsuario = user.findIndex((us:any)=>us.name === form.username.value)
+  const user = JSON.parse(localStorage.getItem('user') as string) || []
+  const indiceUsuario = user.findIndex((us:any)=>us.username === form.username.value)
   if(indiceUsuario === -1){
     alert("Login ou senha invalidos")
     return
