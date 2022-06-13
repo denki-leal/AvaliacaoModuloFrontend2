@@ -22,6 +22,7 @@ function cadastrarUser() {
     localStorage.setItem('users', JSON.stringify(user));
     alert(`Tudo ok ${inputName.value}! Sua conta foi criada!`);
     return;
+    limparForms();
 }
 function verificarNome(name) {
     if (name.length >= 3) {
@@ -58,4 +59,8 @@ function login() {
     }
     saveSession(form.username.value);
     window.location.href = "./home.html";
+}
+function limparForms() {
+    inputName.value = "";
+    inputPass.value = "";
 }
