@@ -2,12 +2,8 @@
 const sessionHome = localStorage.getItem("session");
 let username = sessionStorage.getItem("logged");
 const users = JSON.parse(localStorage.getItem("user")) ?? [];
-const userObject = users.find((user) => {
-    user.username === username;
-});
-const position = users.findIndex((currentUser) => {
-    currentUser.username === username;
-});
+const position = users.findIndex((currentUser) => currentUser.username == username);
+const userObject = users[position];
 const corpoTable = document.querySelector("form-message");
 function mostrarMensagem() {
     let HTMLmessages = "";

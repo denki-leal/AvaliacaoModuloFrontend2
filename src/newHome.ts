@@ -7,14 +7,10 @@ type TUser={
     recados: any
 }
 
-
 const users:TUser[] = JSON.parse(localStorage.getItem("user") as string) ?? [];
-const userObject = users.find((user:TUser) => {
-  user.username === username
-} ) as TUser
-const position = users.findIndex((currentUser:TUser) => {
-    currentUser.username === username
-});
+const position = users.findIndex((currentUser:TUser) => currentUser.username == username);
+
+const userObject = users[position]
 
 const corpoTable = document.querySelector("form-message") as HTMLElement
 
