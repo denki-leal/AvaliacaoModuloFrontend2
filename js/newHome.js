@@ -4,10 +4,10 @@ let username = sessionStorage.getItem("logged");
 const users = JSON.parse(localStorage.getItem("user")) ?? [];
 const position = users.findIndex((currentUser) => currentUser.username == username);
 const userObject = users[position];
-const corpoTable = document.querySelector("form-message");
 function mostrarMensagem() {
     let HTMLmessages = "";
     const messages = userObject.recados;
+    let corpoTable = document.getElementById("form-message");
     if (messages.length) {
         messages.forEach((message, index) => {
             HTMLmessages += `

@@ -12,12 +12,12 @@ const position = users.findIndex((currentUser:TUser) => currentUser.username == 
 
 const userObject = users[position]
 
-const corpoTable = document.querySelector("form-message") as HTMLElement
 
 function mostrarMensagem() {
   let HTMLmessages = "";
   const messages = userObject.recados;
-  
+  let corpoTable = document.getElementById("form-message") as HTMLElement
+
   if (messages.length) {
     messages.forEach((message:any, index:number) => {
       HTMLmessages += `
