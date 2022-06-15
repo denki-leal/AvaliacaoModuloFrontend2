@@ -7,7 +7,7 @@ const userObject = users[position];
 function mostrarMensagem() {
     let HTMLmessages = "";
     const messages = userObject.recados;
-    let corpoTable = document.getElementById("form-message");
+    let corpoTable = document.getElementById("table-body");
     if (messages.length) {
         messages.forEach((message, index) => {
             HTMLmessages += `
@@ -37,20 +37,20 @@ function salvarRecado(isEdit, idEdit) {
     const users = JSON.parse(localStorage.getItem("user")) ?? [];
     const userObject = users[position];
     const listMensage = userObject.recados;
-    const message = {
-        description: description.value,
-        details: details.value,
+    const mensagem = {
+        description: description,
+        details: details,
     };
     if (isEdit) {
-        listMensage[idEdit] = message;
+        listMensage[idEdit] = mensagem;
     }
     else {
-        listMensage.push(message);
+        listMensage.push(mensagem);
     }
     users[position] = userObject;
     localStorage.setItem("user", JSON.stringify(users));
-    mostrarMensagem();
     formMessage.reset();
+    mostrarMensagem();
 }
 function deleteMessage(index) {
     userObject.recados.splice(index, 1);
