@@ -16,7 +16,7 @@ function mostrarMensagem() {
           <td class="table-description">${message.description}</td>
           <td class="table-details">${message.details}</td>
           <td class="table-buttons">
-            <button class="btn btn-edit" onClick="salvarRecado(true, ${index})">Editar</button>
+            <button class="btn btn-edit" onClick="salvarRecado(true, ${index}); refresh();">Editar</button>
             
             <button class="btn btn-delete" onClick="deleteMessage(${index})">Apagar</button>
           </td>
@@ -58,12 +58,8 @@ function deleteMessage(index) {
     localStorage.setItem("user", JSON.stringify(users));
     mostrarMensagem();
 }
-function editMessage(index, isEdit, idEdit) {
-    const formMessage = document.getElementById("form-message");
-    formMessage.message.value = userObject.recados[index].description;
-    formMessage.details.value = userObject.recados[index].details;
-    isEdit = true;
-    idEdit = index;
+function refresh() {
+    location.reload();
 }
 function checkLoggedHome() {
     if (!username) {
